@@ -34,7 +34,7 @@
 - **コミットメッセージには対象Issueの番号を `#Issue番号` の形式で必ず含める**（GitHub上でIssueと自動的にリンクされる）
 
 ```
-[Prefix] : #<Issue番号> : <変更内容>
+<Prefix> : #<Issue番号> : <変更内容>
 ```
 
 | Prefix | 意味 | 例 |
