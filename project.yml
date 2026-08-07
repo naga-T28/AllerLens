@@ -18,6 +18,14 @@ targets:
     platform: iOS
     sources:
       - path: Meelyze
+        excludes:
+          - "**/*.md"
+      - path: Meelyze/Models/README.md
+        buildPhase: none
+      - path: Meelyze/Services/README.md
+        buildPhase: none
+      - path: Meelyze/Repositories/README.md
+        buildPhase: none
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.meelyze.Meelyze
