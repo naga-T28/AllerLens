@@ -26,6 +26,7 @@ LLMはメニューの自然言語理解と構造化に限定して利用し、�
 - [要件定義](docs/requirements.md)
 - [技術選定](docs/technology-selection.md)
 - [開発ルール](docs/development-guide.md)
+- [実機検証ガイド](docs/device-verification.md)
 
 ## 開発体制
 
