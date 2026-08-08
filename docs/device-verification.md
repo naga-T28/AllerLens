@@ -2,8 +2,7 @@
 
 > **Status**: Accepted
 > **対象**: 開発者個人のiPhoneでのDebugビルド起動確認
-> **関連Issue**: #4
-> **関連タスク**: `task/TASK-006-device-clone-verification.md`
+> **関連Issue**: #5
 
 ## 1. 目的
 
@@ -39,7 +38,7 @@ Simulatorでの確認だけでは、実機署名やDevice単体の再現性は�
 
 ## 4. コミット前に必ず確認すること
 
-手順4でTeamを選択すると、**`Meelyze.xcodeproj/project.pbxproj`に個人のTeam ID（`DEVELOPMENT_TEAM`）が書き込まれる**。これは`task/TASK-001-ios-project-policy.md`および`task/TASK-004-gitignore-signing.md`で決めた「Development Teamをリポジトリへ固定しない」方針に反するため、実機確認後は次を必ず実行してから通常の開発作業に戻ること。
+手順4でTeamを選択すると、**`Meelyze.xcodeproj/project.pbxproj`に個人のTeam ID（`DEVELOPMENT_TEAM`）が書き込まれる**。今回は、Development Teamをリポジトリへ固定しない方針に反するため、実機確認後は次を必ず実行してから通常の開発作業に戻ること。
 
 ```sh
 # DEVELOPMENT_TEAM の差分だけであることを確認する
@@ -85,10 +84,3 @@ Team IDは[Apple Developerサイト](https://developer.apple.com/account)のMemb
 | `No profiles for 'com.meelyze.Meelyze' were found` 等の署名エラー | `Signing & Capabilities`でTeamを選び直す、または`-allowProvisioningUpdates`を付けて再実行する |
 | 起動後に「信頼されていないデベロッパ」と表示される | 「設定」→「一般」→「VPNとデバイス管理」で対象のプロファイルを「信頼」する |
 | 確認後、`git status`に`project.pbxproj`の差分が残っている | 本書4節の手順で`git checkout -- Meelyze.xcodeproj/project.pbxproj`を実行する |
-
-## 7. 関連ドキュメント
-
-- `task/TASK-001-ios-project-policy.md`: 署名方針（自動署名・Team個人設定）の決定
-- `task/TASK-004-gitignore-signing.md`: Git除外設定・署名情報の非混入確認
-- `task/TASK-005-simulator-verification.md`: Simulatorでのビルド・テスト・起動確認
-- `task/TASK-006-device-clone-verification.md`: 実機確認・別開発者環境での再現確認のタスク定義
